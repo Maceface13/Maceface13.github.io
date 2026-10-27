@@ -159,6 +159,51 @@ h2 {
   font-size: 1.15rem;
 }
 
+.intro,
+.resume-intro {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.intro {
+  margin-bottom: 1.15rem;
+}
+
+.resume-intro {
+  margin-bottom: 0.35rem;
+}
+
+.intro h1,
+.resume-intro h1,
+.resume-intro .lede {
+  margin-bottom: 0;
+}
+
+/* Round crop. The lower percentage keeps the face in frame on a tall photo. */
+.headshot {
+  flex: none;
+  width: 9.75rem;
+  height: 9.75rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 22%;
+  background: var(--accent-soft);
+  box-shadow:
+    0 0 0 3px var(--surface),
+    0 0 0 5px #e7d3c4,
+    0 10px 22px rgba(74, 44, 26, 0.12);
+}
+
+.headshot-small {
+  width: 4.6rem;
+  height: 4.6rem;
+  box-shadow:
+    0 0 0 2px var(--surface),
+    0 0 0 4px #e7d3c4,
+    0 6px 14px rgba(74, 44, 26, 0.1);
+}
+
 p {
   margin: 0 0 1rem;
 }
@@ -336,6 +381,20 @@ a:hover {
 
   main {
     padding-top: 1.75rem;
+  }
+
+  .intro {
+    align-items: flex-start;
+  }
+
+  .headshot {
+    width: 6.75rem;
+    height: 6.75rem;
+  }
+
+  .headshot-small {
+    width: 3.75rem;
+    height: 3.75rem;
   }
 }
 

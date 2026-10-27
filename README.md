@@ -14,6 +14,7 @@ The empty `.nojekyll` file tells GitHub Pages to publish these files as they are
 | `blog/hello-world.html` | First blog post |
 | `css/styles.css` | All of the styling |
 | `favicon.svg` | The small icon in the browser tab |
+| `images/headshot.jpg` | Photo used on the home page and the resume |
 
 ## Preview on your computer
 
@@ -35,6 +36,10 @@ Then visit <http://localhost:8000>. Stop the server with Ctrl+C when you're done
 4. Commit and push to `main`.
 
 The row of links at the top (Home, Resume, Blog) is copied onto every page. Pages in the `blog` folder start those links with `../` so they can reach the files one folder up. If you rename a page, update the link on each page.
+
+## Replace the photo
+
+The home page and the resume both use `images/headshot.jpg`. To change the picture, save a new photo over that file and keep the name. The round crop is the `.headshot` rule in `css/styles.css`.
 
 ## Add a blog post
 
