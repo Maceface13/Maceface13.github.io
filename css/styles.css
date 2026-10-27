@@ -1,0 +1,371 @@
+/*
+  Macey's site styles.
+  Change the colors and fonts in :root to restyle the whole site.
+*/
+
+:root {
+  --bg: #f6f0e8;
+  --surface: #fffaf4;
+  --ink: #2a231c;
+  --muted: #5c5148;
+  --line: #e4d5c5;
+  --accent: #8f4330;
+  --accent-hover: #6f3324;
+  --accent-soft: #f6e4d8;
+  --shadow: 0 12px 28px rgba(74, 44, 26, 0.06);
+  --radius: 16px;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --sans: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+  background-image: radial-gradient(ellipse 90% 42% at 0% -8%, #f8e3d4, transparent 60%);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  transform: translateY(-150%);
+  background: var(--ink);
+  color: #fffaf4;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(100% - 2rem, 40rem);
+  margin-inline: auto;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.25rem;
+  padding: 1.35rem 0 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-name {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.site-name::before {
+  content: "";
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateY(-0.08rem);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+}
+
+nav a:hover {
+  color: var(--ink);
+  background: rgba(143, 67, 48, 0.08);
+}
+
+nav a[aria-current="page"] {
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 600;
+}
+
+main {
+  flex: 1;
+  padding: 2.25rem 0 3.5rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.15rem, 6vw, 3.15rem);
+  text-wrap: balance;
+}
+
+h2 {
+  margin: 2.2rem 0 0.7rem;
+  font-size: 1.55rem;
+}
+
+.kicker {
+  margin: 0 0 0.7rem;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lede {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+.cards {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.75rem;
+}
+
+.card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.2rem 1.25rem;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+
+.card strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.card span {
+  color: var(--muted);
+}
+
+.card:hover {
+  border-color: #e0b8a4;
+}
+
+.card:hover strong {
+  color: var(--accent);
+}
+
+.job {
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.job h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.job-place,
+.job-dates {
+  margin: 0.15rem 0 0;
+}
+
+.job-dates {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.skills {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.skills li {
+  margin: 0.3rem 0;
+  padding-left: 0.2rem;
+}
+
+.skills li::marker {
+  color: var(--accent);
+}
+
+.post-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.post-list li {
+  border-top: 1px solid var(--line);
+}
+
+.post-list a {
+  display: block;
+  padding: 1.05rem 0 1.1rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-list time {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.post-list h2 {
+  margin: 0.2rem 0 0.25rem;
+  font-size: 1.35rem;
+  color: var(--ink);
+}
+
+.post-list p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.post-list a:hover h2 {
+  color: var(--accent);
+}
+
+.back {
+  margin: 0 0 1.35rem;
+}
+
+.byline {
+  margin-top: -0.35rem;
+  color: var(--muted);
+}
+
+.signoff {
+  margin-top: 1.5rem;
+  font-family: var(--serif);
+}
+
+.site-footer {
+  padding: 0.25rem 0 1.75rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.site-footer p {
+  margin: 0;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #f0c7b4;
+  color: var(--ink);
+}
+
+@media (min-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    align-items: flex-start;
+  }
+
+  nav a {
+    padding: 0.45rem 0.7rem;
+  }
+
+  main {
+    padding-top: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .skip-link,
+  nav,
+  .site-footer,
+  .back,
+  .cards {
+    display: none;
+  }
+
+  .page {
+    width: auto;
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
