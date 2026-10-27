@@ -14,7 +14,7 @@ The empty `.nojekyll` file tells GitHub Pages to publish these files as they are
 | `blog/hello-world.html` | First blog post |
 | `css/styles.css` | All of the styling |
 | `favicon.svg` | The small icon in the browser tab |
-| `images/headshot.jpg` | Photo used on the home page and the resume |
+| `images/headshot.jpg` | Photo used on the home page, resume, and blog |
 
 ## Preview on your computer
 
@@ -39,7 +39,7 @@ The row of links at the top (Home, Resume, Blog) is copied onto every page. Page
 
 ## Replace the photo
 
-The home page and the resume both use `images/headshot.jpg`. To change the picture, save a new photo over that file and keep the name. The round crop is the `.headshot` rule in `css/styles.css`.
+The home page, the resume, and the blog all use `images/headshot.jpg`. To change the picture, save a new photo over that file and keep the name. The round crop is the `.headshot` rule in `css/styles.css`. The blog uses the smaller `.headshot-thumb` size.
 
 ## Add a blog post
 
@@ -51,6 +51,8 @@ Posts are normal HTML files in the `blog` folder. The blog list is written by ha
    - the `<title>` in the head
    - the `<h1>` heading and the date in `<time>`
    - the paragraphs
+
+   Leave the byline as it is: the small round photo and the name Macey. Copying `hello-world.html` already includes that line, so every new post gets the same author credit.
 4. Open `blog/index.html`. Copy the existing `<li>...</li>` block and paste the copy **above** it, so the newest post is first. Update the link (`href`), the date, the title, and the one-line summary.
 5. Commit and push to `main`.
 

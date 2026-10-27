@@ -204,6 +204,26 @@ h2 {
     0 6px 14px rgba(74, 44, 26, 0.1);
 }
 
+/* Smaller circle for the blog header and post byline. */
+.headshot.headshot-thumb {
+  width: 3.15rem;
+  height: 3.15rem;
+  box-shadow:
+    0 0 0 2px var(--surface),
+    0 0 0 3px #e7d3c4;
+}
+
+.blog-intro {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+.blog-intro h1 {
+  margin: 0;
+}
+
 p {
   margin: 0 0 1rem;
 }
@@ -333,8 +353,21 @@ a:hover {
 }
 
 .byline {
-  margin-top: -0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+  margin: 0.15rem 0 1.35rem;
   color: var(--muted);
+}
+
+.byline-name {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.byline time::before {
+  content: "· ";
 }
 
 .signoff {
