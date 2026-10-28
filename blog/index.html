@@ -26,7 +26,8 @@
         Adding a post:
         1. Copy hello-world.html in this folder and give the copy a new file name.
         2. Change the title, date, and paragraphs in that new file.
-        3. Copy an <li> below, paste it at the top of the list, and update the link, date, title, and summary.
+        3. Copy an <li> below, paste it at the top of the list, and update the link (href), date, title, and summary.
+           Leave the "Read more →" line as it is. The whole card is one link.
         Fuller steps are in the README at the project root.
       -->
       <div class="blog-intro">
@@ -37,10 +38,11 @@
 
       <ul class="post-list">
         <li>
-          <a href="hello-world.html">
+          <a class="post-card" href="hello-world.html">
             <time datetime="2026-10-27">October 27, 2026</time>
             <h2>Hello, world (fr this time)</h2>
             <p>I made a website, and this is where I'm writing the student journey down.</p>
+            <span class="read-more">Read more →</span>
           </a>
         </li>
       </ul>

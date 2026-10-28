@@ -53,7 +53,7 @@ Posts are normal HTML files in the `blog` folder. The blog list is written by ha
    - the paragraphs
 
    Leave the byline as it is: the small round photo and the name Macey. Copying `hello-world.html` already includes that line, so every new post gets the same author credit.
-4. Open `blog/index.html`. Copy the existing `<li>...</li>` block and paste the copy **above** it, so the newest post is first. Update the link (`href`), the date, the title, and the one-line summary.
+4. Open `blog/index.html`. Copy the existing `<li>...</li>` block (the whole card) and paste the copy **above** it, so the newest post is first. Update the link (`href` on the `<a class="post-card">`), the date, the title, and the one-line summary. Leave `<span class="read-more">Read more →</span>` as it is. The whole card is one link, so you only change that one `href`.
 5. Commit and push to `main`.
 
 The new post's address will look like `https://maceface13.github.io/blog/notes-from-class.html`.
