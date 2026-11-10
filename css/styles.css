@@ -32,8 +32,6 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background-color: var(--bg);
   background-image: radial-gradient(ellipse 90% 42% at 0% -8%, #f8e3d4, transparent 60%);
   color: var(--ink);
@@ -59,9 +57,6 @@ body {
 }
 
 .page {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   width: min(100% - 2rem, 40rem);
   margin-inline: auto;
 }
@@ -103,6 +98,10 @@ nav {
 }
 
 nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   color: var(--muted);
   text-decoration: none;
   padding: 0.4rem 0.75rem;
@@ -121,7 +120,6 @@ nav a[aria-current="page"] {
 }
 
 main {
-  flex: 1;
   padding: 2.25rem 0 3.5rem;
 }
 
@@ -187,7 +185,7 @@ h2 {
   height: 9.75rem;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 22%;
+  object-position: center;
   background: var(--accent-soft);
   box-shadow:
     0 0 0 3px var(--surface),
@@ -475,30 +473,6 @@ a:hover {
   }
 }
 
-@media print {
-  body {
-    background: #fff;
-    color: #000;
-  }
-
-  .skip-link,
-  nav,
-  .site-footer,
-  .back,
-  .cards {
-    display: none;
-  }
-
-  .page {
-    width: auto;
-    margin: 0;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-}
 
 
 /* Resume page */
@@ -532,9 +506,13 @@ a:hover {
   color: var(--muted);
 }
 
+.btn,
 .resume .download-btn {
   flex: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   margin-top: 0.35rem;
   padding: 0.55rem 1.05rem;
   border-radius: 999px;
@@ -546,6 +524,7 @@ a:hover {
   text-decoration: none;
 }
 
+.btn:hover,
 .resume .download-btn:hover {
   background: var(--accent-hover);
   color: #fffaf4;
@@ -556,11 +535,13 @@ a:hover {
   padding-bottom: 0.35rem;
 }
 
+h3.resume-role,
 .resume-role {
   margin: 1rem 0 0.15rem;
   font-family: var(--serif);
   font-size: 1.15rem;
   font-weight: 600;
+  letter-spacing: normal;
   line-height: 1.3;
 }
 
@@ -594,6 +575,29 @@ a:hover {
 
 .resume li::marker {
   color: var(--accent);
+}
+
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.45rem;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-chips li {
+  margin: 0;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.skill-chips li::marker {
+  content: none;
 }
 
 @media (max-width: 480px) {
@@ -630,7 +634,111 @@ a:hover {
 }
 
 @media print {
-  .download-btn {
+  @page {
+    size: letter;
+    margin: 0.45in;
+  }
+
+  html {
+    font-size: 10pt;
+  }
+
+  body {
+    background: #fff;
+    background-image: none;
+    color: #000;
+    min-height: auto;
+    height: auto;
+    display: block;
+    font-size: 10pt;
+    line-height: 1.25;
+  }
+
+  .page,
+  .page:has(.resume) {
+    width: auto;
+    max-width: none;
+    margin: 0;
+    min-height: auto;
+    height: auto;
+    display: block;
+  }
+
+  main {
+    min-height: auto;
+    height: auto;
+    display: block;
+    padding: 0;
+  }
+
+  .skip-link,
+  .site-header,
+  .site-footer,
+  .back,
+  .cards,
+  .btn,
+  .download-btn,
+  .resume .download-btn {
     display: none;
+  }
+
+  .resume section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .resume-top {
+    margin-bottom: 0.15rem;
+  }
+
+  .resume-top h1,
+  .resume h1 {
+    font-size: 20pt;
+    margin: 0 0 0.12rem;
+  }
+
+  .resume section h2 {
+    font-size: 11pt;
+    margin: 0.45rem 0 0.18rem;
+    padding-bottom: 0.1rem;
+  }
+
+  h3.resume-role,
+  .resume-role {
+    font-size: 10.5pt;
+    margin: 0.35rem 0 0.04rem;
+  }
+
+  .resume-org {
+    margin-bottom: 0.15rem;
+  }
+
+  .resume-contact {
+    margin: 0;
+  }
+
+  .resume ul {
+    margin: 0.08rem 0 0.28rem;
+  }
+
+  .resume li {
+    margin: 0.05rem 0;
+  }
+
+  .skill-chips {
+    gap: 0.2rem 0.25rem;
+  }
+
+  .skill-chips li {
+    padding: 0.08rem 0.4rem;
+    font-size: 9pt;
+    background: none;
+    border: 1px solid #cbb;
+    color: #000;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
