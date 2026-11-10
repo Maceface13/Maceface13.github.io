@@ -10,6 +10,7 @@ The empty `.nojekyll` file tells GitHub Pages to publish these files as they are
 | --- | --- |
 | `index.html` | Home page |
 | `resume.html` | Resume |
+| `Elizabeth_Kirkman_Resume.pdf` | Downloadable resume (city, state, and email only; no phone or ZIP) |
 | `blog/index.html` | Blog list |
 | `blog/hello-world.html` | First blog post |
 | `css/styles.css` | All of the styling |
@@ -64,4 +65,4 @@ Colors and fonts are at the top of `css/styles.css`, inside `:root`. Change thos
 
 ## Please leave these off the site
 
-Don't add a phone number, email address, home address, school name, family names, or Niko's birthdate. Job cities on the resume are fine. The skills list is a placeholder: there's a note in `resume.html`, right above the list, asking you to review it.
+Don't add a phone number, ZIP code, or home address to the site or to the downloadable resume PDF. The resume may show city and state plus email. Don't add family names or Niko's birthdate.
