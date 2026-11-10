@@ -13,8 +13,11 @@ The empty `.nojekyll` file tells GitHub Pages to publish these files as they are
 | `Elizabeth_Kirkman_Resume.pdf` | Downloadable resume (city, state, and email only; no phone or ZIP) |
 | `blog/index.html` | Blog list |
 | `blog/hello-world.html` | First blog post |
+| `404.html` | Custom "page not found" page |
 | `css/styles.css` | All of the styling |
 | `favicon.svg` | The small icon in the browser tab |
+| `favicon-32.png` | PNG favicon for browsers that don't use the SVG |
+| `apple-touch-icon.png` | Icon used when the site is saved to a phone's home screen |
 | `images/headshot.jpg` | Photo used on the home page, resume, and blog |
 
 ## Preview on your computer
