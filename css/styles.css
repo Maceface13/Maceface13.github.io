@@ -819,3 +819,60 @@ h3.resume-role,
     margin: 0.05rem 0;
   }
 }
+
+.resume-earlier-list {
+  margin: 0.15rem 0 0.35rem;
+  padding-left: 1.2rem;
+}
+
+.resume-earlier-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.15rem 1.25rem;
+  margin: 0.12rem 0;
+}
+
+.resume-earlier-list .dates {
+  color: var(--muted);
+  text-align: right;
+  font-style: italic;
+}
+
+.resume-earlier-list .loc {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.resume-earlier-list .loc::before {
+  content: " | ";
+}
+
+@media (max-width: 480px) {
+  .resume-earlier-list li {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+
+  .resume-earlier-list .dates {
+    text-align: left;
+  }
+
+  .resume-earlier-list .loc {
+    display: block;
+  }
+
+  .resume-earlier-list .loc::before {
+    content: none;
+  }
+}
+
+@media print {
+  .resume-earlier-list {
+    margin: 0.08rem 0 0.15rem;
+  }
+
+  .resume-earlier-list li {
+    margin: 0.04rem 0;
+  }
+}
